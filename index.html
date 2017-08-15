@@ -7,20 +7,21 @@
     <meta name="description" content="Easter Date calculator">
     <meta name="keywords" content="Easter, date, calculate">
     <link rel="icon" href="egg_icon.png">
-    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <style>
       .lobster {
           font-family: 'Lobster', cursive;
       }
-      /* For desktop: */
+
+      /* For mobile phones: */
       .col-9 { width: 75%; }
       
-      @media only screen and (max-width: 768px) {
-          /* For mobile phones: */
+      @media only screen and (min-width: 768px) {
+          /* For desktop: */
           [class*="col-"] {
-              width: 95%;
+              width: 600px;
           }
       }
     </style>
@@ -36,18 +37,18 @@
     </div>
     
     <div class="w3-container w3-display-container">
-      <div class="3-container w3-card-8 w3-white w3-padding-large w3-large w3-display-topmiddle col-9">
+      <div class="w3-container w3-card-8 w3-light-grey w3-padding-large w3-large w3-display-topmiddle col-9">
        
         <div class="w3-panel">
           <label>Enter year:</label>
-          <input id="myInput" class="w3-input" type="number">
+          <input id="myInput" class="w3-input w3-light-grey" type="number">
         </div>
         
         <div class="w3-panel">
           <button class="w3-btn w3-green" onclick="myFunction()">Calculate</button>
         </div>
         
-        <div class="w3-panel w3-red w3-margin">
+        <div class="w3-panel w3-red w3-margin" style="margin-top: 50px !important">
           <p>Easter date: <span id="myOutput" style="font-weight: bold"></span><span class="fa fa-calendar w3-right w3-xlarge w3-hide-small"></span></p>
         </div>
         
