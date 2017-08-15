@@ -1,80 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Easter Date</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Easter Date calculator">
-    <meta name="keywords" content="Easter, date, calculate">
-    <link rel="icon" href="egg_icon.png">
-    <link rel="stylesheet" href="w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <style>
-      .lobster {
-          font-family: 'Lobster', cursive;
-      }
+	<head>
+		<title>Easter Date</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Easter Date calculator">
+		<meta name="keywords" content="Easter, date, calculate">
+		<link rel="icon" href="egg_icon.png">
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<style>
+			.lobster {
+					font-family: 'Lobster', cursive;
+			}
 
-      /* For mobile phones: */
-      .col-9 { width: 75%; }
-      
-      @media only screen and (min-width: 768px) {
-          /* For desktop: */
-          [class*="col-"] {
-              width: 600px;
-          }
-      }
-    </style>
-  </head>
-  <body>
-    
-    <div class="w3-container w3-green w3-padding-24 w3-center">
-      <h1 class="w3-xxxlarge w3-wide lobster">Easter Date</h1>
-    </div>
-    
-    <div class="w3-panel w3-center w3-text-green w3-padding-16">
-      <h2><b>This page will calculate an Easter date for any year</b></h2>
-    </div>
-    
-    <div class="w3-container w3-display-container">
-      <div class="w3-container w3-card-8 w3-light-grey w3-padding-large w3-large w3-display-topmiddle col-9">
-       
-        <div class="w3-panel">
-          <label>Enter year:</label>
-          <input id="myInput" class="w3-input w3-light-grey" type="number">
-        </div>
-        
-        <div class="w3-panel">
-          <button class="w3-btn w3-green" onclick="myFunction()">Calculate</button>
-        </div>
-        
-        <div class="w3-panel w3-red w3-margin" style="margin-top: 50px !important">
-          <p>Easter date: <span id="myOutput" style="font-weight: bold"></span><span class="fa fa-calendar w3-right w3-xlarge w3-hide-small"></span></p>
-        </div>
-        
-      </div>
-    </div>
-    
-    <div class="w3-display-bottommiddle" style="width: 100%; z-index: -1">
-      <img src="eastereggs.jpg" style="width: 100%;">
-    </div>
-    
-    <script>
-      function myFunction() {
-          var val = document.getElementById("myInput").value;
-          var a = val % 19;
-          var b = val % 4;
-          var c = val % 7;
-          var d = (19 * a + 15) % 30;
-          var e = (2 * b + 4 * c + 6 * d + 6) % 7;
-          var f = d + e + 4;
-          if (f <= 30) {
-              document.getElementById("myOutput").innerHTML = f + " April";
-          } else {
-              document.getElementById("myOutput").innerHTML = (f - 30) + " May";
-          }
-      }
-    </script>
-    
-  </body>
+			#eggs-img {
+					width: 100%;
+					z-index: -1;
+					position: fixed;
+					bottom: 0;
+			}
+
+			/* For mobile phones: */
+			.col-9 { width: 75%; }
+			h2 {
+					font-size: 18px;
+			}
+			p, label, button, input {
+					font-size: 16px;
+			}
+			input {
+				font-weight: bold;
+			}
+
+			@media only screen and (min-width: 768px) {
+					/* For desktop: */
+					[class*="col-"] {
+							width: 600px;
+					}
+					h2 {
+							font-size: 24px;
+					}
+					p, label, button, input {
+							font-size: 18px;
+					}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="w3-container w3-green w3-padding-24 w3-center">
+			<h1 class="w3-xxxlarge w3-wide lobster">Easter Date</h1>
+		</div>
+		
+		<div class="w3-panel w3-center w3-text-green w3-padding-16">
+			<h2><b>This page will calculate an Easter date for any year</b></h2>
+		</div>
+		
+		<div class="w3-container w3-display-container">
+			<div class="w3-container w3-card-8 w3-light-grey w3-padding-large w3-large w3-display-topmiddle col-9">
+			 
+				<div class="w3-panel">
+					<label>Enter year:</label>
+					<input id="myInput" class="w3-input w3-light-grey" type="number">
+				</div>
+				
+				<div class="w3-panel">
+					<button class="w3-btn w3-green" onclick="myFunction()">Calculate</button>
+				</div>
+				
+				<div class="w3-panel w3-red w3-margin" style="margin-top: 50px !important">
+					<p>Easter date: <span id="myOutput" style="font-weight: bold"></span><span class="fa fa-calendar w3-right w3-xlarge w3-hide-small"></span></p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div id="eggs-img">
+			<img src="eastereggs.jpg" style="width: 100%;">
+		</div>
+		
+		<script>
+			function myFunction() {
+					var val = document.getElementById("myInput").value;
+					var a = val % 19;
+					var b = val % 4;
+					var c = val % 7;
+					var d = (19 * a + 15) % 30;
+					var e = (2 * b + 4 * c + 6 * d + 6) % 7;
+					var f = d + e + 4;
+					if (f <= 30) {
+							document.getElementById("myOutput").innerHTML = f + " April";
+					} else {
+							document.getElementById("myOutput").innerHTML = (f - 30) + " May";
+					}
+			}
+		</script>
+		
+	</body>
 </html>
