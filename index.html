@@ -83,18 +83,18 @@
 		
 		<script>
 			function myFunction() {
-					var val = document.getElementById("myInput").value;
-					var a = val % 19;
-					var b = val % 4;
-					var c = val % 7;
-					var d = (19 * a + 15) % 30;
-					var e = (2 * b + 4 * c + 6 * d + 6) % 7;
-					var f = d + e + 4;
-					if (f <= 30) {
-							document.getElementById("myOutput").innerHTML = f + " April";
-					} else {
-							document.getElementById("myOutput").innerHTML = (f - 30) + " May";
-					}
+				var val = document.getElementById("myInput").value;
+				var a = val % 19;
+				var b = val % 4;
+				var c = val % 7;
+				var d = (19 * a + 15) % 30;
+				var e = (2 * b + 4 * c + 6 * d + 6) % 7;
+				var f = d + e + 4;
+				if (f <= 30) {
+					document.getElementById("myOutput").innerHTML = f + " April";
+				} else {
+					document.getElementById("myOutput").innerHTML = (f - 30) + " May";
+				}
 			}
 		</script>
 		
